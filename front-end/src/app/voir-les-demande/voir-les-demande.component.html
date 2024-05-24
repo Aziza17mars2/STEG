@@ -1,0 +1,52 @@
+<!-- <app-menus-guichet></app-menus-guichet> -->
+<!-- <app-login-guichet></app-login-guichet>  -->
+<!-- 
+<div class="menu">
+     Logo à gauche -->
+    <!-- <div class="logo-container">
+      <img src="assets/steg1.jpg">
+
+    </div> --> 
+    <nav>
+      <a href=".">
+        <div class="login-left">
+          <img src="assets/STEG.jpg">
+        </div>
+      </a>
+      <ul>
+        <li><a routerLink="/login-guichet">Login</a></li>
+        <li class="nav-button-container"><button class="nav-button">Déconnexion</button></li>
+      </ul>
+    </nav>
+<h2>Tous les demandes :</h2>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+      <thead>
+        <tr>
+          <th>Matricule Fiscale</th>
+          <th>Nom de l'entreprise</th>
+          <th>Nom de gérant</th>
+          <th>CIN ou Passeport</th>
+          <th>Adresse</th>
+          <th>Email</th>
+          
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let demande of demandes">
+          <td>{{ demande.matriculfiscal }}</td>
+          <td>{{ demande.nom }}</td>
+          <td>{{ demande.gerant }}</td>
+          <td>{{ demande.cin }}</td>
+          <td>{{ demande.adresse }}</td>
+          <td>{{ demande.email }}</td>
+          
+          <td>
+            <button [routerLink]="['/detaille-user', demande.id]">Vérification</button>         
+           </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

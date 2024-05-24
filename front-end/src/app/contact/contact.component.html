@@ -1,0 +1,70 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary"> 
+      <div class="container">
+        <a class="navbar-brand" href="accueil"><img src="assets/STEG.jpg"class="small-image"/></a>   
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/accueil">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/inscription">Inscription</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/loginuser">Demande</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/resultat">Resultat</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"routerLink="/guide">Guide</a>
+            </li>
+					<li class="nav-item">
+            <a class="nav-link" routerLink="/contact">Contact</a>
+          </li>
+           
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+<div class="contact-section">
+    <h2>Contact</h2>
+
+    <p>STEG<br>
+       <br>
+        1080, Tunis Tunisie<br>
+        Tél: 71735422 71959788<br>
+        Fax: 71429323<br>
+        Produits: Etudes en électricité - électronique, Electricité, Electricité, électronique,  </p>
+    
+    
+    
+    <p>Adresse E-mail : <a href="dpsc@steg.com.tn">dpsc@steg.com.tn</a></p>
+
+    <h3>Nous contacter</h3>
+    <form>
+        <label for="nom">Nom </label>
+        <input type="text" id="nom" name="nom" required>
+        
+        <label for="email">E-mail </label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="telephone">Téléphone</label>
+        <input type="tel" id="telephone" name="telephone">
+        <div>
+            <label for="societe">Société ou organisation :</label>
+            <input type="text" id="societe" name="societe">
+          </div>
+
+        <label for="message">Message </label>
+        <textarea id="message" name="message" required></textarea>
+        
+        <button type="submit"routerLink="/accueil">Envoyer le message</button>
+    </form>
+</div>
+

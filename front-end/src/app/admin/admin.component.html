@@ -1,0 +1,64 @@
+<nav>
+  <a href=".">
+    <div class="login-left">
+      <img src="assets/steg1.jpg">
+    </div>
+  </a>
+  <ul>
+    <li><a routerLink="/login-guichet">Login</a></li>
+    <li class="nav-button-container"><button class="nav-button">Déconnexion</button></li>
+  </ul>
+</nav>
+<h1>Interface d'administration</h1>
+
+<!-- Champ de recherche -->
+<input type="text" [(ngModel)]="searchMatricule" placeholder="Rechercher par matricule">
+<button (click)="onSearch()">Rechercher</button>
+
+<!-- Formulaire d'ajout/modification -->
+<div>
+  <h2>{{ formData.id ? 'Modifier l\'utilisateur' : 'Ajouter un utilisateur' }}</h2>
+  <form (ngSubmit)="formData.id ? updateAgent() : addAgent(formData)">
+    <input type="text" [(ngModel)]="formData.matricule" name="matricule" placeholder="Matricule" required>
+    <input type="text" [(ngModel)]="formData.firstName" name="nom" placeholder="Nom" required>
+    <input type="text" [(ngModel)]="formData.telephone" name="telephone" placeholder="Téléphone" required>
+    <input type="email" [(ngModel)]="formData.email" name="email" placeholder="Email" required>
+    <input type="password" [(ngModel)]="formData.password" name="motdepasse" placeholder="Mot de passe" required>
+    <select [(ngModel)]="formData.role" name="role" required>
+      <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+    </select>
+    <button type="submit">{{ formData.id ? 'Modifier' : 'Ajouter' }}</button>
+    <button type="button" (click)="cancelEdit()">Annuler</button>
+  </form>
+</div>
+
+
+
+<!-- Tableau d'affichage des utilisateurs -->
+<table>
+  <thead>
+    <tr>
+      <th>Matricule</th>
+      <th>Nom</th>
+      <!-- <th>Prénom</th> -->
+      <th>Téléphone</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.matricule }}</td>
+      <td>{{ user.firstName }}</td>
+      <!-- <td>{{ user.prenom }}</td> -->
+      <td>{{ user.telephone }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.role }}</td>
+      <td>
+        <button (click)="editAgent(user)">Modifier</button>
+        <button (click)="deleteAgent(user.id)">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

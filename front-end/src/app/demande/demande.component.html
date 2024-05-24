@@ -1,0 +1,104 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary"> 
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand" href="accueil">
+        <img src="assets/STEG.jpg" class="small-image" alt="Logo" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/accueil">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/menu">Demande</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/resultat">Suivi_demande</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/guide">Guide</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energy Connection Request</title>
+</head>
+
+<body>
+  <div class="containe">
+    <img src="assets/2560px-Logo_Societe_tunisienne_electricite_gaz.svg.png" alt="" class="login" />
+
+    <form (submit)="submitForm()">
+      
+      <!-- Informations sur le demandeur -->
+      <label for="Nom de l'entreprise">Nom de l'entreprise :</label>
+      <input type="text" id="Nom de l'entreprise" [(ngModel)]="formData.nom" name="Nom de l'entreprise" placeholder="Nom de l'entreprise" required>
+
+      <label for="Mtricule Fiscale">Mtricule Fiscale :</label>
+      <input type="text" id="Mtricule Fiscale" [(ngModel)]="formData.matriculfiscal" name="Mtricule Fiscale" placeholder="Mtricule Fiscale" required>
+      
+      <label for="Nom de gérant">Nom de gérant :</label>
+      <input type="text" id="Nom de gérant" [(ngModel)]="formData.gerant" name="Nom de gérant" placeholder="Nom de gérant" required>
+
+      
+      <label for="CIN/Numéro Passeport">CIN/Numéro Passeport :</label>
+      <input type="text" id="CIN/Numéro Passeport" name="CIN/Numéro Passeport"[(ngModel)]="formData.cin" placeholder="CIN ou Passeport" required>
+      
+      <label for="Adresse Entreprise">Adresse Entreprise :</label>
+      <input type="text" id="Adresse Entreprise" [(ngModel)]="formData.adresse" name="Adresse Entreprise" placeholder="Adresse Entreprise" required>
+
+      <label for="Email">Email </label>
+      <input type="email" id="contactEmail" name="contactEmail" [(ngModel)]="formData.email" required placeholder="Email">
+
+      <!-- Informations sur l'adresse -->
+      <label for="siteAddress">Localisation :</label>
+      <textarea id="siteAddress" name="siteAddress" rows="4"[(ngModel)]="formData.adresseProjet" placeholder="Exemple:http://....." required></textarea>
+
+      <label for="fileUpload">Demande de raccordement :</label>
+      <input type="file" id="fileUpload" name="fileUpload" (change)="onFileSelected($event,1)"  placeholder="Télécharger votre Demande" accept=".pdf, .doc, .docx">
+
+      <label for="fileUpload">Copie CIN/passeport :</label>
+      <input type="file" id="fileUpload" name="fileUpload" (change)="onFileSelected($event,2)"  placeholder=" Télécharger votre CIN/passeport" accept=".pdf, .doc, .docx">
+
+
+      <label for="fileUpload">Copie Registre de commerce/matricule fiscale :</label>
+      <input type="file" id="fileUpload" name="fileUpload" (change)="onFileSelected($event,3)"  placeholder="Télécharger votre Registre de commerce/matricule fiscale" accept=".pdf, .doc, .docx">
+
+      <label for="fileUpload">Copie Justificatif de paiement :</label>
+      <input type="file" id="fileUpload" name="fileUpload" (change)="onFileSelected($event,4)" placeholder="Télécharger votre ejustificatif de paiement" accept=".pdf, .doc, .docx">
+
+      <label for="message">Remarque</label>
+        <textarea id="message" name="message" placeholder="Message" [(ngModel)]="formData.remarque" required></textarea>
+<p>NB:Tous les documents fournis sur sopport papier doivent etre paraphés à chaque page, et signés à la derniére page avec cachet et MERCI.</p>
+      <table>
+        <tr>
+          <td style="text-align: center;"><button type="reset" >Annuler</button></td>
+          <td style="text-align: center;"><button type="submit">Envoyer</button>
+
+          </td>
+        </tr>
+      </table>
+      
+    </form>
+  </div>
+</body>
+
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>

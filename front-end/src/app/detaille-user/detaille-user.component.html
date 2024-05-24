@@ -1,0 +1,54 @@
+<nav>
+  <a href=".">
+    <div class="login-left">
+      <img src="assets/STEG.jpg">
+    </div>
+  </a>
+  <ul>
+    <li><a routerLink="/login-guichet">Login</a></li>
+    <li class="nav-button-container"><button class="nav-button">Déconnexion</button></li>
+  </ul>
+</nav>
+
+<h2>Détails de l'utilisateur</h2>
+      <h4>Matricule Fiscale :</h4>{{ demande.matriculfiscal }}
+      <h4>Nom de l'entreprise :</h4>{{ demande.nom }}
+      <h4>Nom de gérant :</h4>{{ demande.gerant }}
+      <h4>CIN ou Passeport :</h4>{{ demande.cin }}
+      <h4>Adresse :</h4>{{ demande.adresse }}
+      <h4>Email :</h4>{{ demande.email }}
+      <h4>Adresse de projet :</h4>{{ demande.adresseProjet }}
+      <h4>Demande de raccordement :</h4>
+      <embed *ngIf="demande.onFileSelected1 != ''" [src]="getSafeUrl(demande.onFileSelected1)" type="application/pdf" width="50%" height="300px" />
+
+      <h4>CIN/passeport :</h4>
+      <embed *ngIf="demande.onFileSelected2 != ''" [src]="getSafeUrl(demande.onFileSelected2)" type="application/pdf" width="50%" height="300px" />
+
+      <h4>Registre de commerce/matricule fiscale :</h4>
+      <embed *ngIf="demande.onFileSelected3 != ''" [src]="getSafeUrl(demande.onFileSelected3)" type="application/pdf" width="50%" height="300px" />
+
+      <h4>Justificatif de paiement :</h4>            
+      <embed *ngIf="demande.onFileSelected4 != ''" [src]="getSafeUrl(demande.onFileSelected4)" type="application/pdf" width="50%" height="300px" />
+
+      <h4>Remarque :{{ demande.remarque }}</h4>
+<ul>
+
+
+
+<div>
+<button (click)="showSaveButton = true">Accepter</button>
+<button (click)="refuserOperation()">Refuser</button>
+</div>
+
+<div *ngIf="showSaveButton">
+<button (click)="save()">Enregistrer</button>
+</div>
+
+<div *ngIf="showSendToSection">
+<h2>Envoyer vers</h2>
+<!-- Afficher les options d'envoi -->
+<label><input type="radio" name="connectionType" [(ngModel)]="selectedConnectionType" value="EN_COURS_DPTE"> DPTE</label>
+<label><input type="radio" name="connectionType" [(ngModel)]="selectedConnectionType" value="EN_COURS_DDI"> DDI</label>
+<!-- Bouton pour valider l'opération -->
+<button (click)="validerOperation(demande,selectedConnectionType)">Envoyer</button>
+</div>

@@ -1,0 +1,120 @@
+
+<!-- <app-menus-guichet></app-menus-guichet> -->
+<!-- <app-login-guichet></app-login-guichet>  -->
+<!-- 
+<div class="menu">
+     Logo à gauche -->
+    <!-- <div class="logo-container">
+      <img src="assets/steg1.jpg">
+
+    </div> --> 
+  
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary"> 
+    <div class="container">
+      <a class="navbar-brand" href="accueil"><img src="assets/STEG.jpg"class="small-image"/></a>   
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/accueil">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/inscription">Inscription</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/loginuser">Demande</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/resultat">Resultat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"routerLink="/guide">Portfolio</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact">Contact</a>
+        </li>
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energy Connection Request</title>
+</head>
+
+<body>
+  <div class="containe">
+    <img src="assets/2560px-Logo_Societe_tunisienne_electricite_gaz.svg.png" alt="" class="logo" />
+    <form (submit)="submitForm()">
+      <label for="fileUpload">Télécharger le contrat d'acceptation :</label>
+      <input type="file" id="fileUpload" name="fileUpload"[(ngModel)]="formData.teldocacc" accept=".pdf, .doc, .docx">
+      <div ng-show="message"style="color: red;">{{formData.message5}}</div>
+
+   
+      <label for="applicantName">Mtricule Fiscale :</label>
+      <input type="text" id="applicantName" [(ngModel)]="formData.matriculfiscal" name="applicantName" placeholder="Mtricule Fiscale" required>
+      <div ng-show="message"style="color: red;">{{formData.message1}}</div>
+   
+      <label for="applicantName">Nom de l'entreprise :</label>
+      <input type="text" id="applicantName" [(ngModel)]="formData.nom" name="applicantName" placeholder="Nom de l'entreprise" required>
+      <div ng-show="message"style="color: red;">{{formData.message9}}</div>
+      <label for="applicantName">CIN ou Passeport :</label>
+      <input type="text" id="applicantName" name="applicantName"[(ngModel)]="formData.cin" placeholder="CIN ou Passeport" required>
+      <div ng-show="message"style="color: red;">{{formData.message2}}</div>
+
+      <!-- Informations de contact -->
+      <label for="Email">Email </label>
+      <input type="email" id="contactEmail" name="contactEmail" [(ngModel)]="formData.email" required placeholder="Email">
+      <div ng-show="message"style="color: red;">{{formData.message3}}</div>
+
+      <!-- Informations sur l'adresse -->
+      <label for="siteAddress">Adresse de projet:</label>
+      <textarea id="siteAddress" name="siteAddress" rows="4"[(ngModel)]="formData.adressprojet" placeholder="Adresse de projet" required></textarea>
+      <div ng-show="message"style="color: red;">{{formData.message4}}</div>
+
+      <label for="fileUpload">Demande :</label>
+      <input type="file" id="fileUpload" name="fileUpload" [(ngModel)]="formData.teldoc"  placeholder="Télécharger votre Demande" accept=".pdf, .doc, .docx">
+      <div ng-show="message"style="color: red;">{{formData.message5}}</div>
+
+      <label for="fileUpload">CIN/passeport :</label>
+      <input type="file" id="fileUpload" name="fileUpload" [(ngModel)]="formData.teldoc"  placeholder=" Télécharger votre CIN/passeport" accept=".pdf, .doc, .docx">
+      <div ng-show="message"style="color: red;">{{formData.message5}}</div>
+
+      <label for="fileUpload">Registre de commerce/matricule fiscale :</label>
+      <input type="file" id="fileUpload" name="fileUpload" [(ngModel)]="formData.teldoc"  placeholder="Télécharger votre Registre de commerce/matricule fiscale" accept=".pdf, .doc, .docx">
+      <div ng-show="message"style="color: red;">{{formData.message5}}</div>
+
+      <label for="fileUpload">Justificatif de paiement :</label>
+      <input type="file" id="fileUpload" name="fileUpload" [(ngModel)]="formData.teldoc"  placeholder="Télécharger votre ejustificatif de paiement" accept=".pdf, .doc, .docx">
+      <div ng-show="message"style="color: red;">{{formData.message5}}</div>
+
+      <label for="message">Message </label>
+        <textarea id="message" name="message" placeholder="Message" [(ngModel)]="formData.message" required></textarea>
+        <div ng-show="message"style="color: red;">{{formData.message6}}</div>
+
+      <table>
+        <tr>
+          <td style="text-align: center;"><button type="reset" >Annuler</button></td>
+          <td style="text-align: center;"><button type="submit">Envoyer la demande</button>
+          <td style="text-align: center;"><button type="submit">Archiver</button>
+
+          </td>
+        </tr>
+      </table>
+      
+    </form>
+  </div>
+</body>
+
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>

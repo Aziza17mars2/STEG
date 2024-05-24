@@ -1,0 +1,147 @@
+Kacem Nirsen
+
+<!-- <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary"> 
+      <div class="container">
+        <a class="navbar-brand" href="accueil"><img src="assets/STEG.jpg"class="small-image"/></a>   
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/accueil">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/inscription">Inscription</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/loginuser">Demande</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/resultat">Resultat</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"routerLink="/guide">Portfolio</a>
+            </li>
+					<li class="nav-item">
+            <a class="nav-link" routerLink="/contact">Contact</a>
+          </li>
+           
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header> -->
+    <form>
+        <div class="qubely-column-inner">
+            <div class="wp-block-qubely-heading qubely-block-47eb29">
+                <div class="qubely-block-heading">
+                    <div class="qubely-heading-container">
+                        <h4 class="qubely-heading-selector">
+                            <strong>Inscription</strong>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="wp-block-contact-form-7-contact-form-selector">
+                <div role="form" class="wpcf7" id="wpcf7-f1857-p1830-01" lang="fr-FR" dir="ltr">
+                    <div class="screen-reader-response">
+                        <p role="status" aria-live="polite" aria-atomic="true"></p>
+                        <ul></ul>
+                    </div>
+                    <form (submit)="submitForm()">
+                        <div style="display: none;">
+                            <input type="hidden" name="_wpcf7" value="1857">
+                            <input type="hidden" name="_wpcf7_version" value="5.6.1">
+                            <input type="hidden" name="_wpcf7_locale" value="fr_FR">
+                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f1857-p1830-01">
+                            <input type="hidden" name="_wpcf7_container_post" value="1830">
+                            <input type="hidden" name="_wpcf7_posted_data_hash" value="">
+                            <input type="hidden" name="_wpcf7_recaptcha_response" value="">
+                        </div>
+                        <p> 
+                            <label style="color:#252a37">
+                                
+                                <span class="wpcf7-form-control-wrap" data-name="firstName">
+                                    <label for="applicantName">Nom de l'entreprise :</label>
+                                    <input type="text"  name="your-fname"[(ngModel)]="formData.firstName" size="40" placeholder="Prénom">
+                                    <div ng-show="message1"style="color: red;">{{formData.message1}}</div>
+
+                                </span>
+                            </label>
+                            <label style="color:#252a37">
+                                
+                                <span class="wpcf7-form-control-wrap" data-name="matriculefiscal">
+                                    <label for="applicantName">Mtricule Fiscale :</label>
+                                    <input type="text"  [(ngModel)]="formData.matriculefiscal" name="your-fname" size="40" placeholder="Entrez votre matricule fiscal">
+                                    <div ng-show="message"style="color: red;">{{formData.message}}</div>
+
+                                </span>
+                            </label>
+
+                            
+                            
+                            
+                            <label style="color: #252a37"> 
+                                
+                                <span class="wpcf7-form-control-wrap" data-name="your-lname">
+                                    <label for="applicantName">Adresse :</label>
+                                    <input type="text"  [(ngModel)]="formData.adresse"  name="your-lname" value size="40"  placeholder="Adresse">
+                                    <div *ngIf="formData.message7" style="color: red;">{{formData.message7}}</div>
+
+                                </span>
+                            </label>
+                            
+                            
+                            <label style="color:#252a37">
+                                
+                                <span class="wpcf7-form-control-wrap" data-name="email">
+                                    <label for="applicantName">Email :</label>
+                                    <input type="email" [(ngModel)]="formData.email" name="your-email" value size="40"  placeholder="E-mail">
+                                    <div *ngIf="formData.message3"style="color: red;">{{formData.message3}}</div>
+
+
+                                </span>
+                            </label>
+                            
+                            <label style="color:#252a37"> 
+                                <span class="wpcf7-form-control-wrap" data-name="your-phone">
+                                    <label for="applicantName">Numéro de téléphone :</label> 
+                                    <input type="tel" [(ngModel)]="formData.phoneNumber"  name="your-phone" value size="40"  placeholder="Numéro de téléphone">
+                                    <div *ngIf="formData.message4"style="color: red;">{{formData.message4}}</div>
+
+                                </span>
+                            </label>
+                            
+                            <label style="color:#252a37"> 
+                                <span class="wpcf7-form-control-wrap" data-name="your-modepasse">
+                                    <label for="applicantName">Mot De Passe :</label> 
+                                    <input type="password" [(ngModel)]="formData.password" name="password" value size="40"  placeholder="Mot de passe">
+                                    <div *ngIf="formData.message5"style="color: red;">{{formData.message5}}</div>
+
+                                </span>
+                            </label>
+                            
+                            <label style="color:#252a37"> 
+                                <span class="wpcf7-form-control-wrap" data-name="your-confmodepasse">
+                                    <label for="applicantName">confirmer mot de passe :</label> 
+                                    <input type="password" [(ngModel)]="formData.confirmPassword"  name="your-confirm-password" value size="40"  placeholder="confirmer le mot de passe">
+                                    <div *ngIf="formData.message6"style="color: red;">{{formData.message6}}</div>
+
+                                </span>
+                            </label>
+                            
+                            <p>
+                                <button type="submit" (click)="addAgent(formData)">S'inscrire</button>
+                                 <span class="wpcf7-spinner"> 
+                                </span>   
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>

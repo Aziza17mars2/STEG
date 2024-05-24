@@ -1,0 +1,55 @@
+<nav>
+  <a href=".">
+    <div class="login-left">
+      <img src="assets/steg1.jpg">
+    </div>
+  </a>
+  <ul>
+    <li><a routerLink="/login-guichet">Login</a></li>
+    <li class="nav-button-container"><button class="nav-button">Déconnexion</button></li>
+  </ul>
+</nav>
+<div class="container">
+<h2>Consultation des demandes</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Matricule Fiscale</th>
+      <th>Nom de l'entreprise</th>
+      <th>CIN ou Passeport</th>
+      <th>Email</th>
+      <th>Adresse de projet</th>
+      <th>Demande</th>
+      <th>CIN/passeport</th>
+      <th>Registre de commerce/matricule fiscale</th>
+      <th>Justificatif de paiement</th>
+      <th>Message</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let DemandeDdi of demandes">
+      <td>{{ DemandeDdi.matriculfiscal }}</td>
+      <td>{{ DemandeDdi.nom }}</td>
+      <td>{{ DemandeDdi.gerant }}</td>
+      <td>{{ DemandeDdi.cin }}</td>
+      <td>{{ DemandeDdi.adresse }}</td>
+      <td>{{DemandeDdi.email }}</td>
+      <td>{{ DemandeDdi.adresseProjet }}</td>
+      <td>
+        <embed *ngIf="DemandeDdi.onFileSelected1 != ''" [src]="getSafeUrl(DemandeDdi.onFileSelected1)" type="application/pdf" width="10%" height="60px" />
+      </td>
+      <td><embed *ngIf="DemandeDdi.onFileSelected2 != ''" [src]="getSafeUrl(DemandeDdi.onFileSelected2)" type="application/pdf" width="10%" height="60px" />
+      </td>
+      <td><embed *ngIf="DemandeDdi.onFileSelected3 != ''" [src]="getSafeUrl(DemandeDdi.onFileSelected3)" type="application/pdf" width="10%" height="60px" />
+      </td>
+      <td><embed *ngIf="DemandeDdi.onFileSelected4 != ''" [src]="getSafeUrl(DemandeDdi.onFileSelected4)" type="application/pdf" width="10%" height="60px" />
+      </td>
+      <td>{{ DemandeDdi.remarque }}</td>
+      <td>
+        <button routerLink="/verfication-unitee",demandes.id>Verification</button>
+
+      </td>
+  </tbody>
+</table>
+</div>

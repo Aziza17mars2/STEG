@@ -1,0 +1,71 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary"> 
+      <div class="container">
+        <a class="navbar-brand" href="accueil"><img src="assets/STEG.jpg"class="small-image"/></a>   
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/accueil">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/inscription">Inscription</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/loginuser">Demande</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/resultat">Resultat</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"routerLink="/guide">Guide</a>
+            </li>
+					<li class="nav-item">
+            <a class="nav-link" routerLink="/contact">Contact</a>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription en ligne</title>
+    <!-- Add the Bootstrap CSS link -->
+</head>
+<body>
+
+    <div class="container identification-section" ng-app="myApp" ng-controller="myController">
+        <h2> IDENTIFIER AVEC VOTRE NUMERO DE matricule fiscal:</h2>
+        <p>Pour entamer votre résultat en ligne, veuillez fournir votre numéro de Matricule fiscale.</p>
+
+        <form  (submit)="submitForm()">
+            <div class="form-group">
+                <label>NUMERO DE MATRICULE FISCALE :</label>
+                <input type="text" [(ngModel)]="f.matriculfiscal" class="form-control"   placeholder="Entrez votre numéro de Matricule fiscale" required>
+                <div ng-show="message3"style="color: red;">{{f.message3}}</div>
+              </div>
+              <div class="form-group">
+                <label>NUMERO DE CIN :</label>
+                <input type="text" [(ngModel)]="f.cin" class="form-control"   placeholder="Entrez votre numéro de cin" required>
+                <div ng-show="message3"style="color: red;">{{f.message4}}</div>
+              </div>
+
+            <p> <a class="for" href="inscription">CLIQUEZ ICI</a></p>
+
+            <!-- Add the submit button -->
+            <button type="submit" class="btn btn-primary">Soumettre</button>
+        </form>
+    </div>
+
+   
+
+</body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
